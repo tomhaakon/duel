@@ -1,30 +1,44 @@
+<!-- Licensed under a BSD license. See license.html for license -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>My first three.js app</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Three.js - Responsive in Paragraph</title>
     <style>
       body {
-        margin: 0;
-        overflow: hidden;
+        font-size: 16pt;
       }
-      #info {
-        width: 100%;
-        position: absolute;
-        background-color: rgb(66, 97, 97);
-        height: 60px;
-        font-size: 50px;
-        text-align: center;
-        color: white;
-        font-weight: 700;
-        text-align: center;
-        z-index: 100;
-        display: block;
+      #c {
+        float: left;
+        padding: 5px;
+        width: 200px;
+        height: 150px;
       }
     </style>
   </head>
   <body>
-    <script type="module" src="/main.js"></script>
-    <div id="info">Snurr snurr, din tisselurr</div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet
+      maximus metus, a interdum massa faucibus id. Pellentesque in mauris elit.
+      Vestibulum quis consectetur nisi. <canvas id="c"></canvas> Nulla
+      pellentesque, sapien in condimentum ullamcorper, mi nisl sollicitudin
+      felis, a ullamcorper sapien dui vel metus. Nam augue nisi, elementum id
+      diam vel, blandit imperdiet nunc. Vivamus facilisis imperdiet neque id
+      porttitor. Mauris sapien felis, mollis tempus orci vitae, sollicitudin
+      varius augue. Nullam non magna id sem faucibus sollicitudin. Proin nunc
+      mi, rutrum et elementum ut, auctor eget massa.
+    </p>
   </body>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "../../build/three.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="threejs-responsive.js"></script>
 </html>
