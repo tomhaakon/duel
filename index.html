@@ -24,7 +24,37 @@
     </style>
   </head>
   <body>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/js/main.js"></script>
     <div id="info">Snurr snurr, din tisselurr</div>
+    <div
+      id="cameraPosition"
+      style="
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 5px;
+        font-size: 50px;
+      "
+    >
+      Camera Position: x=0, y=0, z=0
+    </div>
+    <div
+      id="zoomBox"
+      style="
+        position: fixed;
+        bottom: 80px;
+        font-size: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        border-radius: 5px;
+      "
+    >
+      Zoom: N/A
+    </div>
   </body>
 </html>
