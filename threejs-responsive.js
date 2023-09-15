@@ -2,20 +2,21 @@ import * as THREE from "three";
 import { FontLoader } from "three/addons/loaders/FontLoader.js";
 import { ParametricGeometry } from "three/addons/geometries/ParametricGeometry.js";
 import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
+
 function main() {
   const canvas = document.querySelector("#c");
   const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
 
-  const fov = 40;
+  const fov = 75;
   const aspect = 2; // the canvas default
   const near = 0.1;
-  const far = 1000;
+  const far = 100;
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   //z imot meg
-  camera.position.z = 120;
+  camera.position.z = 50;
   const scene = new THREE.Scene();
   //set bagrunnsfarge
-  scene.background = new THREE.Color(0xffffff);
+  scene.background = new THREE.Color(0xaaaaaa);
   {
     const color = 0xffffff;
     const intensity = 3;
@@ -75,14 +76,12 @@ function main() {
     const segments = 24;
     addSolidGeometry(-1, 2, new THREE.CircleGeometry(radius, segments));
   }
-
   {
     const radius = 6;
     const height = 8;
     const segments = 16;
     addSolidGeometry(0, 2, new THREE.ConeGeometry(radius, height, segments));
   }
-
   {
     const radiusTop = 4;
     const radiusBottom = 4;
@@ -306,7 +305,6 @@ function main() {
       )
     );
   }
-
   {
     const radius = 3.5;
     const tube = 1.5;
@@ -327,7 +325,6 @@ function main() {
       )
     );
   }
-
   {
     class CustomSinCurve extends THREE.Curve {
       constructor(scale) {
@@ -359,7 +356,6 @@ function main() {
       )
     );
   }
-
   {
     const width = 8;
     const height = 8;
@@ -374,7 +370,6 @@ function main() {
       )
     );
   }
-
   {
     const width = 8;
     const height = 8;
@@ -385,7 +380,6 @@ function main() {
       new THREE.WireframeGeometry(new THREE.BoxGeometry(width, height, depth))
     );
   }
-
   function resizeRendererToDisplaySize(renderer) {
     const canvas = renderer.domElement;
     const width = canvas.clientWidth;
@@ -394,17 +388,17 @@ function main() {
     if (needResize) {
       renderer.setSize(width, height, false);
     }
-
     return needResize;
   }
 
   function render(time) {
     time *= 0.001;
-
     if (resizeRendererToDisplaySize(renderer)) {
       const canvas = renderer.domElement;
       camera.aspect = canvas.clientWidth / canvas.clientHeight;
       camera.updateProjectionMatrix();
+    } else {
+      console.log("piss");
     }
 
     objects.forEach((obj, ndx) => {
